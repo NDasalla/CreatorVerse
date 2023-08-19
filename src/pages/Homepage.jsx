@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { supabase } from "../client.js";
-import CreatorCard from "../components/CreatorCard.jsx";
+import ShowCreators from "../components/ShowCreators.jsx";
 
 export async function loader({ params }) {
   const { data, error } = await supabase.from("creators").select();
@@ -23,7 +23,7 @@ const Homepage = () => {
   return (
     <div>
       <div className="">
-        <CreatorCard creators={creators} />
+        <ShowCreators creators={creators} />
       </div>
     </div>
   );
