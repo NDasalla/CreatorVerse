@@ -1,8 +1,10 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import Root from "./pages/Root";
-import Homepage, { loader as HomepageLoader } from "./pages/Homepage";
-import ViewCreator from "./pages/creators/ViewCreator";
+import Homepage, { loader as homepageLoader } from "./pages/Homepage";
+import ViewCreator, {
+  loader as viewCreatorLoader,
+} from "./pages/creators/ViewCreator";
 import AddCreator from "./pages/creators/AddCreator";
 import EditCreator from "./pages/creators/EditCreator";
 
@@ -14,7 +16,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Homepage />,
-        loader: HomepageLoader,
+        loader: homepageLoader,
       },
       {
         path: "/addCreator",
@@ -24,6 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/creators/:creatorId",
         element: <ViewCreator />,
+        loader: viewCreatorLoader,
       },
       {
         path: "/creators/:creatorId/edit",
