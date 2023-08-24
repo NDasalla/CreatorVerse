@@ -5,8 +5,14 @@ import Homepage, { loader as homepageLoader } from "./pages/Homepage";
 import ViewCreator, {
   loader as viewCreatorLoader,
 } from "./pages/creators/ViewCreator";
-import AddCreator from "./pages/creators/AddCreator";
-import EditCreator from "./pages/creators/EditCreator";
+import AddCreator, {
+  action as addCreatorAction,
+} from "./pages/creators/AddCreator";
+import EditCreator, {
+  loader as editCreatorLoader,
+  action as editCreatorAction,
+} from "./pages/creators/EditCreator";
+import { action as deleteCreatorAction } from "./pages/creators/DeleteCreator";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/addCreator",
         element: <AddCreator />,
-        // action: addCreatorAction,
+        action: addCreatorAction,
       },
       {
         path: "/creators/:creatorId",
@@ -31,11 +37,12 @@ const router = createBrowserRouter([
       {
         path: "/creators/:creatorId/edit",
         element: <EditCreator />,
-        // action: editCreatorAction,
+        loader: editCreatorLoader,
+        action: editCreatorAction,
       },
       {
         path: "/creators/:creatorId/delete",
-        // action: deleteCreatorAction,
+        action: deleteCreatorAction,
       },
     ],
   },

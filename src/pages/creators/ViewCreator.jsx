@@ -18,18 +18,18 @@ const ViewCreator = () => {
   console.log(creator);
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="mx-10 flex justify-center items-center h-screen">
       <div className="">
         <div
           className="max-w-4xl px-5 py-5 bg-[#272727] text-white
-          rounded-lg shadow-[0px_0px_3px_rgba(0,0,0,0.90)] min-h-[50rem]
+          rounded-lg shadow-[0px_0px_3px_rgba(0,0,0,0.90)]
           flex
           "
         >
           <div className="">
             <div className="">
               <Link to={`/creators/${creator.id}/edit`} className="">
-                <button className="">Edit</button>
+                <button className="border-2 px-4 py-2">Edit</button>
               </Link>
             </div>
             <div className="py-10">
